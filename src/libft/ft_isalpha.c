@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 16:08:17 by jopires-          #+#    #+#             */
-/*   Updated: 2025/01/16 16:08:22 by jopires-         ###   ########.fr       */
+/*   Created: 2024/08/27 12:11:33 by jopires-          #+#    #+#             */
+/*   Updated: 2024/11/09 19:31:19 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
+int	ft_isalpha(int c)
+{
+	int	x;
+	int	i;
 
-# include "libft/libft.h"
-
-//stacks
-struct s_stack {
-  int *stack_a;
-  int *stack_b;
-};
-//
-#endif
+	i = 0;
+	x = 0;
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
+}
+/*int main()
+{
+	printf("%d",ft_isalpha("yugdyWiwqgd"));
+}
+*/
