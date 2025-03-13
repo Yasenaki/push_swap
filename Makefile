@@ -1,34 +1,35 @@
 CC = cc	
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRCS = 
-
+SRCS_DIR = ./src
+SRCS = $(SRCS_DIR)aux_ps.c $(SRCS_DIR)push_aux.c \
+$(SRCS_DIR)push_swap.c
 
 OBJS = $(SRCS:.c=.o)
-NAME = push_swap.a
+NAME = libftprintf.a
 
-PRINTF_DIR = ./src
-PRINTF = $(PRINTF_DIR)/libftprintf.a
+LIBFT_DIR = ./src/libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
 
 .c.o:
 		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-$(NAME): $(PRINTF) $(OBJS)
-		cp $(PRINTF) $(NAME)
+$(NAME): $(LIBFT) $(OBJS)
+		cp $(LIBFT) $(NAME)
 		ar rcs $(NAME) $(OBJS)
 
-$(PRINTF):
-	make -C $(PRINTF_DIR)
+$(LIBFT):
+	make -C $(LIBFT_DIR)
 
 clean:
 	rm -f  $(OBJS)
-	make clean -C $(PRINTF_DIR)
+	make clean -C $(LIBFT_DIR)
 
 fclean: clean
 	rm -f $(NAME) 
-	make fclean -C $(PRINTF_DIR)
+	make fclean -C $(LIBFT_DIR)
 
 re: fclean all
 

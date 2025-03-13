@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:42:38 by jopires-          #+#    #+#             */
-/*   Updated: 2024/12/07 19:12:39 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/13 22:45:22 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-# define HEX_LOW_BASE "0123456789abcdef"
-# define HEX_UP_BASE "0123456789ABCDEF"
-# define FORMAT_SPECIFIERS "cspdiuxX%"
-
-# include <stdarg.h>
+# include <stdbool.h>
 # include "libft/libft.h"
 
-int				ft_printf(const	char *format, ...);
-unsigned int	aux_plun_bs(unsigned long int nb, char *base, unsigned int out);
-int				aux_putnbr(int nb, int out);
-int				aux_putunbr(unsigned int nb, int out);
+typedef struct s_stack
+{
+	int		nb;
+	int		index;
+	int 	push_cost;
+	bool	med;
+	bool	cheap;
+	struct s_stack	*next;
+	struct s_stack	*t_index;
+}	t_stack;
+
+//aux_ps.c
+void	push();
+void	rotate();
+void	double_rotate();
+void	check_ps(t_stack **a, t_stack **b);
+
+//aux_stacks.c
+void inicialize_s(t_stack **a, t_stack **b);
+
+//aux_verify.c
+bool is_num(char *str);
+int	is_valid(t_stack **a, char **argv);
+
+//aux_arg_manipulation.c
+void	add_end(t_stack *a, t_stack *x);
 
 #endif

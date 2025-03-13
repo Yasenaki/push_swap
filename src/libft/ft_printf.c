@@ -6,11 +6,11 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:51:46 by jopires-          #+#    #+#             */
-/*   Updated: 2024/12/10 21:57:22 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/12 21:26:56 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	aux_ptr(unsigned long int str)
 {

@@ -6,11 +6,11 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:47:31 by jopires-          #+#    #+#             */
-/*   Updated: 2024/12/07 19:17:25 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/11 22:17:39 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 unsigned int	aux_plun_bs(unsigned long int nb, char *base, unsigned int out)
 {
