@@ -6,7 +6,7 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:04:18 by jopires-          #+#    #+#             */
-/*   Updated: 2025/03/13 22:46:33 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:36:15 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ int	main(int argc, char **argv)
 	else
 		argv = &argv[1];
 	if(is_valid(&a, argv))
-	//parei aqui
+	{
+		start_push_swap(&a,&b);
+		//parei aqui
+	}
 }

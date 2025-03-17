@@ -6,8 +6,17 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 21:40:49 by jopires-          #+#    #+#             */
-/*   Updated: 2025/03/13 22:45:43 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:42:53 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void sort_small(t_stack *a, t_stack *b)
+{
+	
+}
+void sort_big(t_stack *a, t_stack *b)
+{
+
+}

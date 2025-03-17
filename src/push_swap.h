@@ -6,7 +6,7 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:42:38 by jopires-          #+#    #+#             */
-/*   Updated: 2025/03/13 22:45:22 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:34:26 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,9 @@ int	is_valid(t_stack **a, char **argv);
 
 //aux_arg_manipulation.c
 void	add_end(t_stack *a, t_stack *x);
+
+//push_aux.c
+int start_push_swap(t_stack **a, t_stack **b);
+
 
 #endif

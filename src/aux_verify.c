@@ -6,20 +6,19 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:13:33 by jopires-          #+#    #+#             */
-/*   Updated: 2025/03/13 22:44:22 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:30:40 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static bool is_num(char *str)//recebe uma string e valida se e numero
+static bool is_num(char *str)
 {
 	int i;
 
 	i = 0;
 	while(str[i] != '\0')
 	{
-		//12 12 123 123 123
 		if (i == 0)
 		{
 			if ((str[i] != '-' && str[i] != '+' && (str[i] < '0' || str[i] > '9')))
@@ -61,6 +60,7 @@ static int	create_node(t_stack **a, char **argv, size_t idx)
 		else
 			add_end(a, new_node);
 	}
+	return (1);	
 }
 
 static int	is_dup(t_stack **a, char **str)
