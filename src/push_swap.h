@@ -6,7 +6,7 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:42:38 by jopires-          #+#    #+#             */
-/*   Updated: 2025/03/17 16:34:26 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:46:07 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ void	add_end(t_stack *a, t_stack *x);
 
 //push_aux.c
 int start_push_swap(t_stack **a, t_stack **b);
+
+//aux_movements
+void first_to_last(t_stack **stack);
+void swap_top(t_stack **stack);
+void last_to_first(t_stack **stack);
 
 
 #endif

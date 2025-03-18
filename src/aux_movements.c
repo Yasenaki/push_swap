@@ -6,7 +6,7 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 19:07:32 by jopires-          #+#    #+#             */
-/*   Updated: 2025/03/17 20:10:20 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:45:03 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,59 @@
 
 void swap_top(t_stack **stack)
 {
-	int buff;
+	t_stack	*buff;
+	t_stack *cp;
 
+	cp = *stack;
 	if(*stack)
 	{
 		if((*stack)->next)
 		{
-			buff = (*stack)->nb;//primeira pos
-			(*stack)->nb = (*stack)->next->nb;//2nd pos para 1st pos
-			(*stack)->next->nb = buff;//buffer preenche pos 1 com val 2
+			buff = *stack;//primeira pos
+			cp->next = cp;//2nd pos para 1st pos
+			cp = buff;//buffer preenche pos 1 com val 2
+		}
+	}
+}
+void first_to_last(t_stack **stack)
+{
+
+	t_stack *top;
+	t_stack *bot;
+
+	if(stack)
+	{
+		if((*stack)->next)
+		{
+			top = *stack;
+			*stack = top ->next;
+			top->next = NULL;
+			bot = *stack;
+			while(bot->next)
+				bot = bot->next;
+			bot->next = top;
 		}
 	}
 }
 void last_to_first(t_stack **stack)
 {
-	t_stack *head;
-	t_stack *bottom;
 
-	if(*stack)
+	t_stack *newtop;
+	t_stack *previous;
+
+	if(stack)
 	{
 		if((*stack)->next)
 		{
-			head = (*stack)->nb;
-			*stack = head->next;
-			while((*stack)->next != NULL)
+			newtop = *stack;
+			while(newtop->next)
 			{
-				bottom = (*stack)->next->nb;
+				previous = newtop;
+				newtop = newtop->next;
 			}
-			bottom->nb = head;
+			previous->next = NULL;
+			newtop->next = *stack;
+			*stack = newtop;
 		}
 	}
 }
