@@ -6,13 +6,24 @@
 /*   By: jopires- <jopires-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 19:07:32 by jopires-          #+#    #+#             */
-/*   Updated: 2025/03/18 17:45:03 by jopires-         ###   ########.fr       */
+/*   Updated: 2025/03/24 18:03:13 by jopires-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap_top(t_stack **stack)
+void	free_stack(t_stack *stack)
+{
+	t_stack	*temp;
+
+	while (stack)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+}
+void swap_top(t_stack **stack, int p_stack, int is_write)
 {
 	t_stack	*buff;
 	t_stack *cp;
@@ -27,8 +38,10 @@ void swap_top(t_stack **stack)
 			cp = buff;//buffer preenche pos 1 com val 2
 		}
 	}
+	if (!is_write)
+		ft_printf("s%c\n", p_stack);
 }
-void first_to_last(t_stack **stack)
+void first_to_last(t_stack **stack, int p_stack, int is_write)
 {
 
 	t_stack *top;
@@ -47,8 +60,10 @@ void first_to_last(t_stack **stack)
 			bot->next = top;
 		}
 	}
+	if (!is_write)
+		ft_printf("r%c\n", p_stack);
 }
-void last_to_first(t_stack **stack)
+void last_to_first(t_stack **stack, int p_stack, int is_write)
 {
 
 	t_stack *newtop;
@@ -57,7 +72,7 @@ void last_to_first(t_stack **stack)
 	if(stack)
 	{
 		if((*stack)->next)
-		{
+		{	
 			newtop = *stack;
 			while(newtop->next)
 			{
@@ -69,4 +84,19 @@ void last_to_first(t_stack **stack)
 			*stack = newtop;
 		}
 	}
+		if (!is_write)
+		ft_printf("rr%c\n", p_stack);
+}
+void	push_top(t_stack **in, t_stack **out, int p_stack)
+{
+	t_stack	*temp;
+
+	if (*in)
+	{
+		temp = *in;
+		*in = (*in)->next;
+		temp->next = *out;
+		*out = temp;
+	}
+	ft_printf("p%c\n", p_stack);
 }
